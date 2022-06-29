@@ -3,18 +3,21 @@ package dong.study.studyproject.service;
 import dong.study.studyproject.domain.Member;
 import dong.study.studyproject.repository.MemberRepository;
 import dong.study.studyproject.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     public final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
-
 
     /**
      * 회원 가입
