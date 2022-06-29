@@ -1,7 +1,6 @@
 package dong.study.studyproject.repository;
 
 import dong.study.studyproject.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
