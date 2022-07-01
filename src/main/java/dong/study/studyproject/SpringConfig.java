@@ -1,5 +1,6 @@
 package dong.study.studyproject;
 
+import dong.study.studyproject.aop.TimeTraceAop;
 import dong.study.studyproject.repository.MemberRepository;
 import dong.study.studyproject.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,4 +42,9 @@ public class SpringConfig {
 //        return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 //    }
+
+    @Bean
+    public TimeTraceAop timeTraceAop () {
+        return new TimeTraceAop();
+    }
 }
