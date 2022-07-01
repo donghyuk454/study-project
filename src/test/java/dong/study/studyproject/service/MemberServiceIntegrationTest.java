@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-//@Transactional
+@Transactional
 public class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
@@ -21,7 +21,7 @@ public class MemberServiceIntegrationTest {
     void 회원가입() {
         // given
         Member member = new Member();
-        member.setName("hi");
+        member.setName("trans");
 
         // when
         Long saveId = memberService.join(member);
@@ -35,9 +35,9 @@ public class MemberServiceIntegrationTest {
     public void 중복_회원_예외(){
         //given
         Member member1 = new Member();
-        member1.setName("spring");
+        member1.setName("중복");
         Member member2 = new Member();
-        member2.setName("spring");
+        member2.setName("중복");
         //when
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));

@@ -1,7 +1,14 @@
 package dong.study.studyproject.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Member {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 알아서 생성
     private Long id;
+
+    @Column(name="name")
     private String name;
 
     public Long getId() {
